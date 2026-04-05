@@ -1,60 +1,137 @@
-# 🏥 Medical Report Analyzer
+# 🩺 Medical Report Analyzer
 
-An NLP-powered system that extracts, analyzes, and interprets medical reports using OCR and machine learning.
+## 📌 Overview
+
+The **Medical Report Analyzer** is an AI-powered system designed to help users understand complex medical reports in a simple and structured way.
+
+It combines **OCR, NLP, rule-based analysis, and AI explanation** to convert raw medical data into meaningful health insights.
 
 ---
 
-## 🚀 Overview
+## 🚀 Problem Statement
 
-This project aims to automate the understanding of medical reports by converting unstructured report data into structured insights. It uses OCR for text extraction and NLP techniques for processing and analysis.
+Medical reports are often:
+
+* Difficult to interpret
+* Filled with technical terminology
+* Lacking personalized explanation
+
+This project aims to transform **unstructured medical reports → structured insights → understandable guidance**.
+
+---
+
+## 🧠 System Pipeline
+
+### 🔄 End-to-End Flow
+
+1. **Report Input**
+
+   * Upload medical report (Image / PDF)
+
+2. **OCR Layer (Deep Learning-based)**
+
+   * Extract raw text using OCR models
+
+3. **Information Extraction (NLP + Regex)**
+
+   * Identify:
+
+     * Test Name
+     * Observed Value
+     * Normal Range
+
+4. **Structured Data Conversion**
+
+   * Convert extracted data into JSON format
+
+```json
+{
+  "Hemoglobin": {
+    "value": 10.2,
+    "range": "13-17"
+  }
+}
+```
+
+5. **Health Analysis Engine (Rule-Based Core)**
+
+   * Compare values with reference ranges
+   * Detect abnormalities (Low / Normal / High)
+   * Identify potential health risks
+
+6. **AI Explanation Layer**
+
+   * Convert results into:
+
+     * Simple explanations
+     * Risk insights
+     * Precautions & suggestions
+
+7. **(Planned) Trend Analysis**
+
+   * Track reports over time
+   * Detect health patterns
+
+8. **(Planned) Multilingual Support**
+
+   * Provide outputs in regional languages
+
+---
+
+## 🔍 Key Features
+
+* 📄 Medical report upload (PDF/Image)
+* 🔎 OCR-based text extraction
+* 🧠 Structured data generation
+* ⚠️ Abnormality detection
+* 💡 Personalized health insights
+* 📊 Health trend tracking (planned)
+* 🌐 Multilingual output (planned)
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Backend:** Flask (Python)
-* **NLP:** NLTK, spaCy (planned)
-* **OCR:** Tesseract OCR, OpenCV (planned)
-* **ML:** Scikit-learn (planned)
-* **Frontend:** Vue.js (planned)
+* **Backend:** Flask
+* **Frontend:** HTML, CSS
+* **OCR:** EasyOCR / Tesseract
+* **NLP:** Regex + Text Processing
+* **AI:** LLM (for explanation layer)
+* **Deployment:** Vercel
 
 ---
 
-## 📂 Project Structure
+## ⚙️ Core Design Principle
 
-backend/ - Flask backend
-frontend/ - Vue frontend
-data/ - datasets and sample reports
-notebooks/ - ML experiments
+This project follows a **hybrid intelligence approach**:
 
----
-
-## ⚙️ Current Status
-
-* ✅ Repository initialized
-* ✅ Project structure created
-* 🔄 Backend setup in progress
-* 🔜 OCR + NLP pipeline
+* **Deep Learning (OCR)** → for extracting text
+* **NLP + Regex** → for structuring data
+* **Rule-Based System** → for interpretable medical analysis
+* **LLM** → for human-friendly explanations
 
 ---
 
-## 🎯 Goals
+## ⚠️ Limitations
 
-* Extract clinical values from reports
-* Perform intelligent text analysis using NLP
-* Generate health insights and risk predictions
-
----
-
-## 📌 Future Improvements
-
-* Deep Learning (Transformers for medical NLP)
-* Report summarization
-* Chatbot-based explanation system
-* Scalable architecture using async processing
+* OCR accuracy depends on report quality
+* Rule-based logic covers common scenarios only
+* Not a replacement for professional medical advice
 
 ---
 
-## 👨‍💻 Author
+## 🔮 Future Enhancements
 
-Subhasmita Nayak
+* Named Entity Recognition (NER) models for better extraction
+* Doctor/Expert validation system
+* Offline-first architecture
+* Personalized health dashboards
+* Integration with wearable health data
+
+---
+
+## 📌 Disclaimer
+
+This system is intended for educational and informational purposes only and should not replace professional medical consultation.
+
+---
